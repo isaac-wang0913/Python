@@ -1,4 +1,4 @@
-# https://leetcode-cn.com/leetbook/read/linked-list/jsumh/
+# https://leetcode-cn.com/leetbook/read/linked-list/jy291/
 # 单链表：单链表中的每个结点不仅包含值，还包含链接到下一个结点的引用字段
 # 索引的时间复杂度：O(n)
 # 插入的时间复杂度：O(n)
