@@ -1,8 +1,10 @@
 # https://leetcode-cn.com/leetbook/read/linked-list/jy291/
 # 单链表：单链表中的每个结点不仅包含值，还包含链接到下一个结点的引用字段
-# 索引的时间复杂度：O(n)
-# 插入的时间复杂度：O(n)
-# 删除的时间复杂度：O(n)
+# 时间复杂度：
+# addAtHead:O(1)
+# addAtInder,get,deleteAtIndex:O(k)，其中k指的是元素的索引
+# addAtTail：O(n)，其中 NN 指的是链表的元素个数
+# 空间复杂度：所有的操作都是O(1)
 
 class ListNode:
     def __init__(self, val):
@@ -71,9 +73,13 @@ class SingleLinkList:
 
 if __name__ == '__main__':
     singlelinklist = SingleLinkList()
-    singlelinklist.addAtIndex(0, 1)
-    singlelinklist.addAtIndex(1, 2)
-    singlelinklist.addAtIndex(2, 3)
+    singlelinklist.addAtIndex(0, 0)
+    singlelinklist.addAtIndex(1, 1)
+    singlelinklist.addAtIndex(2, 2)
     print(singlelinklist.get(0), singlelinklist.get(1), singlelinklist.get(2))
     singlelinklist.deleteAtIndex(1)
     print(singlelinklist.get(1))
+    singlelinklist.addAtHead(4)
+    print(singlelinklist.get(0))
+    singlelinklist.addAtTail(5)
+    print(singlelinklist.get(3))
