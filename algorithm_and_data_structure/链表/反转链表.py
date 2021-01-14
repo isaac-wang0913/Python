@@ -1,3 +1,12 @@
+# https://leetcode-cn.com/leetbook/read/linked-list/f58sg/
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def reverseList(self, head):
         # 双指针
         # 时间复杂度：O(n)
         # 空间复杂度：O(1)
