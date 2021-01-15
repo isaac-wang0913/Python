@@ -21,4 +21,4 @@ class Solution:
             even.next = odd.next
             even = even.next
         odd.next = evenhead
-        return odd
+        return head
