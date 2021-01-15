@@ -92,7 +92,7 @@ class DoubleLinkList:
 
         else:
             succ = self.tail
-            for j in range(self.size-index):
+            for j in range(self.size-index-1):
                 succ = succ.pre
             pred = succ.pre.pre
         pred.next = succ
