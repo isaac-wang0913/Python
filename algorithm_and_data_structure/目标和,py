@@ -1,0 +1,29 @@
+class Solution:
+    def findTargetSumWays(self, nums: List[int], S: int) -> int:
+        """
+        使用一个 dp 数组，其中 dp[i][j] 表示到第 i 个数字且和为j的情况总数
+        dp[i][j] = dp[i - 1][j - nums[i]] + dp[i - 1][j + nums[i]]
+        length = (2 * S) + 1
+        dp Table
+          -5 -4 -3 -2 -1  0  1  2  3  4  5
+        1  0  0  0  0  1  0  1  0  0  0  0
+        1  0  0  0  1  0  2  0  1  0  0  0
+        1  .......
+        1
+        1
+        """
+        n = len(nums)
+        sumation = 0
+        for num in nums:
+            sumation += num
+        if abs(sumation) < abs(S): return 0
+        length = (2 * sumation) + 1
+        dp = [[0 for _ in range(length)] for _ in range(n)]
+        dp[0][sumation + nums[0]] = 1
+        dp[0][sumation - nums[0]] = 1
+        for i in range(1, n):
+            for j in range(length):
+                l = dp[i - 1][j - nums[i]] if 0 <= j - nums[i] < length else 0
+                r = dp[i - 1][j + nums[i]] if 0 <= j + nums[i] < length else 0
+                dp[i][j] = l + r
+        return dp[n - 1][sumation + S]
