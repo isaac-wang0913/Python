@@ -23,7 +23,7 @@ class Solution:
         if N < 2:
             return N
         i, j, result = 0, 0, 1
-        for _ in range(1, N):
+        for _ in range(2, N+1):
             i, j = j, result
             result = i + j
         return result
